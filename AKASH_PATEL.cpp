@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -147,54 +146,48 @@ int main()
 		cout << "Enter 6 to exit.\n";
 		cin >> ch;
 		string nodeId;
+		
+Node* temp;
+		string data;
+		string a, b;
+		Node* temp1, *temp2;
 		switch(ch) {
 			case 1: if (countnode == 0) {
-						string data;
 						cout << "Enter data: ";
 						cin >> data;
 						genesis = createGenesis(data);
 					}
 					break;
-			case 2: 
-					int n;
+			case 2: int n;
 					cout << "Enter nodeId and number of children to add : ";
 					cin >> nodeId;
 					cin >> n;
-					Node* temp = find(genesis, nodeId);
+					temp = find(genesis, nodeId);
 					addChildren(temp, n);
 					break;
-			case 3:	string data;
+			case 3:	
 					cout << "Enter NodeId and new data : ";
-					cin << nodeId;
+					cin >> nodeId;
 					cin >> data;
-					Node* temp = find(genesis, nodeId);
-					Editnode(temp, data);
+					temp = find(genesis, nodeId);
+					editValue(temp, data);
 					break;
 			case 4:	
 					cout << "Enter NodeId : ";
-					cin << nodeId;
-					Node* temp = find(genesis, nodeId);
+					cin >> nodeId;
+					temp = find(genesis, nodeId);
 					cout << longestchain(temp);
 					break;
-			case 5:	string a, b;
+			case 5:	
 					cout << "Enter NodeId of first and second node : ";
 					cin >> a >> b;
-					Node* aaa = find(genesis, a);
-					Node* bbb = find(genesis, b);
-					merge(aaa, bbb);
+					temp1 = find(genesis, a);
+					temp2 = find(genesis, b);
+					merge(temp1, temp2);
 					break;
-			case 6:	exit();
+			case 6:	exit(0);
 			default:cout << "Enter a valid number.\n";
 		}
 	}
 	return 0;
 }
-
-
-
-
-
-
-
-
-
