@@ -1,2 +1,4 @@
 # posist-nit-kkr-recruitment
 11520013 Akash Patel
+
+THIS PROJECT IS MADE IN C++ AND CAN BE COMPILED USING A GCC COMPILER
